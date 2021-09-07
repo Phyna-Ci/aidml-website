@@ -25,7 +25,7 @@ const data = [
     altText: 'Transparency',
     title: 'Transparency',
     text:
-      'We are open about what we do and how we do it',
+      'We are open about what we do and how we do it. We want people to feel secured and safe using our products.',
   },
   {
     id: 3,
