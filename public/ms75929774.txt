@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "aidml.com",
+  "Id": "0428d9c0-00d2-4cbe-a95a-4c17c5cf91ff"
+}
