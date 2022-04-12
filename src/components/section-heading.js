@@ -8,25 +8,23 @@ const SectionHeading = ({ title, description, ...props }) => {
     <Box sx={styles.heading} {...props}>
       {
         title ? (
-          <Heading sx={styles.title}>{title}</Heading>
+          <Heading as="h3">{title}</Heading>
         ) : (
           <Heading as="h3">{ (
             <>
-              Technology for <br />
-              an Evolving World
+              AI Solutions For Africa
             </>
           )}</Heading>
         )
       }
       {
         description ? (
-          <Text sx={styles.description}>
+          <Text sx={styles.defaultDescription} as="p">
             {description}
           </Text>
         ) : (
           <Text sx={styles.defaultDescription} as="p">
-            We design interactive Artificial Intelligence (AI) systems that integrate sophisticated but intuitive<br />
-            machine learning techniques personalised user experience anywhere in the world.<br />
+            At AI Data Management, we are building a suite of AI solutions for African Enterprises. Our goal is simple. We want to help businesses grow by deploying AI solutions that meet customer needs, reduce overhead and drive growth.
           </Text>
         )
       }
@@ -47,7 +45,7 @@ const styles = {
       fontWeight: 'bold',
       position: 'relative',
       width: '100%',
-      fontSize: ['28px', '35px', null, '45px', null, '50px', '85px'],
+      fontSize: ['28px', '35px', null, '45px', null, '45px', '45px'],
       maxWidth: ['500px', null, null, null, null, null, '100%'],
       '&:before': {
         content: '""',

@@ -3,14 +3,15 @@
 import { IoMdMenu } from 'react-icons/io';
 import React, { useContext } from 'react';
 import { jsx, Box, Image } from 'theme-ui';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { NavLink, Link } from 'components/link';
 import { DrawerContext } from 'contexts/drawer/drawer-context';
 import Drawer from 'components/drawer';
 import Logo from 'components/logo';
 import menuItems from './header.data';
 import close from 'assets/images/icons/close.png';
 
-const DrawerNav = () => {
+const DrawerNav = ({ isSticky }) => {
   const { state, dispatch } = useContext(DrawerContext);
 
   // Toggle drawer
@@ -25,7 +26,10 @@ const DrawerNav = () => {
       width="340px"
       placement="right"
       drawerHandler={
-        <Box sx={styles.handler}>
+        <Box sx={{
+          ...styles.handler,
+          ...(!isSticky ? { color: '#FFF' } : { color: 'primary' })
+        }}>
           <IoMdMenu size="26px" />
         </Box>
       }
@@ -47,7 +51,7 @@ const DrawerNav = () => {
             <Box as="li" key={i}>
               <Link
                 activeClass="active"
-                to={path}
+                path={path}
                 spy={true}
                 smooth={true}
                 offset={-70}

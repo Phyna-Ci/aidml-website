@@ -1,25 +1,15 @@
-import { ThemeProvider } from 'theme-ui';
-import theme from 'theme';
+import * as React from 'react';
 import SEO from 'components/seo';
-import Layout from 'components/layout';
-import Banner from 'sections/banner';
-import SubscribeUs from 'sections/subscribe-us';
-import KeyFeature from '../sections/key-feature';
+import LandingBanner from 'components/landing/landing-banner';
 
 export default function IndexPage() {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <SEO
-          title="Phyna Computers Inc."
-          description="Phyna Computers Incorporated (PCI): Technology for an Evolving World!"
-        />
-        <Banner />
-        <KeyFeature />
-        <br />
-        <br />
-        <SubscribeUs />
-      </Layout>
-    </ThemeProvider>
+    <React.Fragment>
+      <SEO
+        title="AI Data Management Limited"
+        description="AI Data Management Limited: Technology for an Evolving World!"
+      />
+      <LandingBanner />
+    </React.Fragment>
   );
 }

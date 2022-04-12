@@ -1,18 +1,22 @@
 export default [
   {
-    path: 'about',
+    path: '/',
+    label: 'Home',
+  },
+  {
+    path: '/about',
     label: 'About',
   },
   {
-    path: 'products',
+    path: '/solutions',
+    label: 'Solutions',
+  },
+  {
+    path: '/products',
     label: 'Products',
   },
   {
-    path: 'services',
-    label: 'Services',
-  },
-  {
-    path: 'blog',
+    path: '/blog',
     label: 'Blog',
   },
 ];

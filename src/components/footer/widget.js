@@ -25,7 +25,7 @@ export default Widget;
 const styles = {
   footerWidget: {
     h4: {
-      color: 'heading',
+      color: '#FFFFFF',
       fontFamily: 'body',
       fontSize: '18px',
       fontWeight: 500,
@@ -34,7 +34,7 @@ const styles = {
     },
     ul: {
       listStyle: 'none',
-      margin: '28px 0 0',
+      margin: '12px 0 0',
       padding: 0,
       li: {
         display: 'flex',
@@ -44,7 +44,7 @@ const styles = {
         },
       },
       a: {
-        color: rgba('#02073E', 0.8),
+        color: rgba('#FFFFFF', 1),
       },
     },
   },
