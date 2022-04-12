@@ -1,7 +1,6 @@
 import * as React from 'react';
 import SEO from 'components/seo';
 import Banner from 'sections/banner';
-import SubscribeUs from 'sections/subscribe-us';
 import KeyFeature from '../sections/key-feature';
 
 const Solutions = () => (
@@ -14,7 +13,6 @@ const Solutions = () => (
     <KeyFeature />
     <br />
     <br />
-    <SubscribeUs />
   </React.Fragment>
 );
 

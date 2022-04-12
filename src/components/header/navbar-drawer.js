@@ -9,7 +9,6 @@ import { DrawerContext } from 'contexts/drawer/drawer-context';
 import Drawer from 'components/drawer';
 import Logo from 'components/logo';
 import menuItems from './header.data';
-import close from 'assets/images/icons/close.png';
 
 const DrawerNav = ({ isSticky }) => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -37,7 +36,7 @@ const DrawerNav = ({ isSticky }) => {
       toggleHandler={toggleHandler}
       closeButton={
         <button sx={styles.closeButton}>
-          <Image src={close} alt="close" />
+          <Image src={'../../assets/images/icons/close.png'} alt="close" />
         </button>
       }
       maskStyle={styles.mask}

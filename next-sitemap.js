@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://aidml.com',
   generateRobotsTxt: true,
   // optional
   // robotsTxtOptions: {
