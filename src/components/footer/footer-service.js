@@ -11,7 +11,11 @@ const FooterService = ({ item }) => {
       </Box>
       <Box sx={{ ...styles.content }}>
         <Heading as="h3">{item?.title}</Heading>
-        <Text as="p">{item?.description}</Text>
+        {item.items ? item.items.map((it) => (
+          <Text key={it} as="p">{it}</Text>
+        )) : (
+          <Text as="p">{item?.description}</Text>
+        )}
       </Box>
     </Box>
   );

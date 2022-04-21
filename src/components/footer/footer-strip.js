@@ -11,7 +11,8 @@ const data = [
     title: 'Phone',
     moreLink: '#',
     hasBg: true,
-    description: '+8 (495) 989 20 11',
+    items: ['Dubai: +971 56 587 4697', 'Nigeria: +234 817 578 8888, +234 705 974 8355', 'US: +1 240 608 9766'],
+    description: 'Dubai: +971 56 587 4697',
    
   },
   {
@@ -19,7 +20,7 @@ const data = [
     icon: FaMapMarker,
     title: 'Location',
     moreLink: '#',
-    description: '202, Souk Al Bahar, Block -C, Downtown. Dubai',
+    items: ['Dubai: 202, Souk Al Bahar, Block -C, Downtown, Dubai', 'Nigeria: 39 Bourdillon Rd, Ikoyi 101233, Lagos'],
    
   },
   {
