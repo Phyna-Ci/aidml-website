@@ -157,6 +157,7 @@ const styles = {
     'button': {
       borderRadius: 0,
       minHeight: '60px',
+      background: '#00008E',
     }
   }
 };

@@ -34,7 +34,7 @@ const styles = {
     textAlign: ['center', null, null, null, null, 'left'],
     background: 'rgba(255, 255, 255, 0.2)',
     ':not(:first-of-type):not(:last-child)': {
-      background: 'rgba(255, 255, 255, 0.75)',
+      background: 'rgba(255, 255, 255, 0.5)',
       padding: '25px 30px',
     },
     padding: '25px 30px',

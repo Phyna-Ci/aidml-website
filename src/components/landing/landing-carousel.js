@@ -51,7 +51,7 @@ const LandingCarousel = () => {
       <Slider
         sx={styles.carousel} {...settings}>
         <Box sx={styles.heading}>
-          <Box as="span">
+          <Box className="carousel-text-area" as="span">
             <Heading as="h3">
               AI Solutions For Africa
             </Heading>
@@ -67,7 +67,7 @@ const LandingCarousel = () => {
           </Box>
         </Box>
         <Box sx={styles.heading}>
-          <Box as="span">
+          <Box className="carousel-text-area" as="span">
             <Heading as="h3">
               Experiences For Your Business
             </Heading>
@@ -94,15 +94,23 @@ const styles = {
     minHeight: '400px',
     display: 'flex !important',
     flexDirection: 'row',
-    h3: {
-      marginTop: '120px',
-      lineHeight: 1.18,
-      color: '#FFFFFF',
-      fontWeight: 'bold',
-      position: 'relative',
-      width: '100%',
-      fontSize: ['28px', '35px', null, '45px', null, '45px', '45px'],
-      maxWidth: ['500px', null, null, null, null, null, '100%'],
+    justifyContent: 'space-between',
+    'span.carousel-text-area': {
+      backround: 'red',
+      width: [null, null, null, null, '80%'],
+      h3: {
+        marginTop: '120px',
+        lineHeight: 1.18,
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+        position: 'relative',
+        width: '100%',
+        fontSize: ['28px', '35px', null, '40px', null, '40px', '40px'],
+        maxWidth: ['500px', null, null, null, null, null, '100%'],
+      },
+      p: {
+        width: '70%'
+      }
     },
   },
   defaultDescription: {
@@ -143,11 +151,4 @@ const styles = {
       display: 'none'
     }
   },
-  // heading: {
-  //   color: '#FFFFFF',
-  //   h2: {
-  //     fontSize: [8, null, null, 8, 9, 10, 11],
-  //     lineHeight: [1.57],
-  //   },
-  // },
 }
