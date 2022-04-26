@@ -8,7 +8,7 @@ export default {
     background: '#FFFFFF', // body background color
     backgroundSecondary: '#F9FBFD', // secondary background color
     borderColor: '#F3F4F5', // border color
-    primary: 'rgb(15, 16, 170)', // primary button and link color
+    primary: '#7B28FF', // primary button and link color
     secondary: '#C55753', // secondary color - can be used for hover states
     muted: '#7B8188', // muted color
     accent: '#609', // a contrast color for emphasizing UI
@@ -27,10 +27,10 @@ export default {
     },
   },
   fonts: {
-    body: 'DM Sans',
+    body: 'Montserrat, sans-serif',
     // body:
     //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: 'DM Sans',
+    heading: 'Montserrat, sans-serif',
     // heading: 'Bree Serif',
     monospace: 'Menlo, monospace',
   },
