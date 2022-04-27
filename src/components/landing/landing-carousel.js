@@ -49,7 +49,7 @@ const LandingCarousel = () => {
   return (
     <div style={{ maxWidth: '89vw' }}>
       <Slider
-        sx={styles.carousel} {...settings}>
+        sx={styles.carousel} {...settings} autoplay={true}>
         <Box sx={styles.heading}>
           <Box className="carousel-text-area" as="span">
             <Heading as="h3">
@@ -69,7 +69,7 @@ const LandingCarousel = () => {
         <Box sx={styles.heading}>
           <Box className="carousel-text-area" as="span">
             <Heading as="h3">
-              Experiences For Your Business
+              Redefine Customer Experiences For Your Business
             </Heading>
             <Text sx={styles.defaultDescription} as="p">
               Increase your response time and improve customer satisfaction with our Conversational AI bots that offer engaging conversations, complaint resolution, and customer support interaction.
