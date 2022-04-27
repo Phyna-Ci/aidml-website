@@ -2,10 +2,12 @@
 /** @jsx jsx */
 import { jsx, Box, Container, Button } from 'theme-ui';
 import * as React from 'react';
+import { useRouter } from 'next/router';
 import LandingCarousel from 'components/landing/landing-carousel';
 import BackgroundVideo from 'assets/background.svg';
 
 const LandingBanner = () => {
+  const router = useRouter();
   return (
     <Box as="section" id="about" sx={styles.section}>
       <Container>
@@ -13,10 +15,14 @@ const LandingBanner = () => {
           <LandingCarousel />
           <Box sx={styles.illustration}>
             <Box sx={styles.buttonWrapper}>
-              <Button sx={styles.buttonWrapper.primary}>Get a free quote</Button>
+              <Button onClick={() => {
+                router.push('/about')
+              }} sx={styles.buttonWrapper.primary}>Learn More</Button>
             </Box>
             <Box sx={styles.buttonWrapper}>
-              <Button sx={styles.buttonWrapper.secondary}>Book an appointment</Button>
+              <Button onClick={() => {
+                router.push('/products')
+              }} sx={styles.buttonWrapper.secondary}>Get Started</Button>
             </Box>
           </Box>
         </Box>
