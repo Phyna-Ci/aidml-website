@@ -7,6 +7,7 @@ import Banner from 'sections/banner';
 import KeyFeature from '../sections/key-feature';
 import FeatureCardWithBg from 'components/cards/feature-card-with-bg';
 import FeatureCardColumn from 'components/feature-card-column';
+import useModal from '../hooks/useModal';
 import video360Animation from 'assets/animations/92010-video-360.json';
 import designAnimation from 'assets/animations/91881-design.json';
 import digitalMarketingAnimation from 'assets/animations/91898-digital-marketing.json';
@@ -17,7 +18,6 @@ import paperPlanesAnimation from 'assets/animations/paper-planes.json';
 import bookAnimation from 'assets/animations/book.json';
 import appMessagingAnimation from 'assets/animations/app-messaging.json';
 import webMessagingAnimation from 'assets/animations/web-messaging.json';
-import Creativity from 'assets/key-feature/creativity.svg';
 
 const Solutions = () => {
   const data = [
@@ -46,6 +46,8 @@ const Solutions = () => {
         'We provide constant support for our clients to ensure that the deployed solutions result in productivity and growth.',
     },
   ]
+  const modal = useModal();
+  const handleClick = () => modal.dispatch({ type: 'TOGGLE' });
   return (
     <React.Fragment>
       <SEO
@@ -54,9 +56,9 @@ const Solutions = () => {
       />
       <Banner pageTitle={'Solutions'} breadCrumb={'Home / Solutions'} />
       <KeyFeature />
-      <br />
-      <br />
-      <br />
+      <br sx={styles.br} />
+      <br sx={styles.br} />
+      <br sx={styles.br} />
       <Box sx={styles.ourProcess}>
         <Container sx={styles.ourProcessInner}>
           <Box sx={styles.headingSection}>
@@ -108,7 +110,7 @@ const Solutions = () => {
                 ))}
               </Box>
               <Box sx={styles.buttonWrapper}>
-                <Button sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button onClick={handleClick} sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
             <Box sx={styles.illustrationSection}>
@@ -139,7 +141,7 @@ const Solutions = () => {
                 ))}
               </Box>
               <Box sx={{ ...styles.buttonWrapper, justifyContent: 'end' }}>
-                <Button sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button onClick={handleClick} sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
           </Box>
@@ -164,7 +166,7 @@ const Solutions = () => {
                 ))}
               </Box>
               <Box sx={styles.buttonWrapper}>
-                <Button sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button onClick={handleClick} sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
             <Box sx={styles.illustrationSection}>
@@ -196,7 +198,7 @@ const Solutions = () => {
                 ))}
               </Box>
               <Box sx={{ ...styles.buttonWrapper, justifyContent: 'end' }}>
-                <Button sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button onClick={handleClick} sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
           </Box>
@@ -221,7 +223,7 @@ const Solutions = () => {
                   ))}
               </Box>
               <Box sx={styles.buttonWrapper}>
-                <Button sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button onClick={handleClick} sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
             <Box sx={styles.illustrationSection}>
@@ -252,6 +254,9 @@ const Solutions = () => {
 export default Solutions;
 
 const styles = {
+  br: {
+    display: ['none', 'block']
+  },
   ourProcess: {
     background: '#7B28FF15',
     height: 'auto',

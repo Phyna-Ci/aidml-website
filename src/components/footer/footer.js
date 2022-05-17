@@ -5,6 +5,7 @@ import {
   Container, Heading, Input,
   Button,
 } from 'theme-ui';
+import React from 'react';
 import { useRouter } from 'next/router';
 import Logo from 'components/logo';
 import { Element } from 'react-scroll';
@@ -13,9 +14,11 @@ import { menuItems } from './footer.data';
 import { rgba } from 'polished';
 import FooterStrip from './footer-strip';
 import BackgroundVideo from 'assets/background.svg';
+import useModal from '../../hooks/useModal';
 
 export default function Footer() {
   const router = useRouter();
+  const modal = useModal();
   return (
     <Box as="footer" sx={{
       ...styles.footer,
@@ -28,7 +31,7 @@ export default function Footer() {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
       } : {
-        
+
       }),
     }}>
       <Container>
@@ -54,7 +57,13 @@ export default function Footer() {
               </Text>
               <Box sx={styles.inputBox}>
                 <Input />
-                <Button>S</Button>
+                <Button onClick={() => {
+                  modal.dispatch({
+                    type: 'TOGGLE',
+                  })
+                }}>
+                 send
+                </Button>
               </Box>
             </Box>
           </Box>
