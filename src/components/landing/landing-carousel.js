@@ -62,6 +62,7 @@ const LandingCarousel = () => {
           <Box sx={{
             height: 'auto',
             alignSelf: 'center',
+            ...styles.media
           }} as="span">
             <LandingAnimation />
           </Box>
@@ -78,6 +79,7 @@ const LandingCarousel = () => {
           <Box sx={{
             height: 'auto',
             alignSelf: 'center',
+            ...styles.media
           }} as="span">
             <LandingAnimation />
           </Box>
@@ -90,16 +92,18 @@ const LandingCarousel = () => {
 export default LandingCarousel;
 
 const styles = {
+  media: {
+    display: ['none', 'block'],
+  },
   heading: {
     minHeight: '400px',
     display: 'flex !important',
     flexDirection: 'row',
     justifyContent: 'space-between',
     'span.carousel-text-area': {
-      backround: 'red',
       width: [null, null, null, null, '80%'],
       h3: {
-        marginTop: '120px',
+        marginTop: ['100px', '120px'],
         lineHeight: 1.18,
         color: '#FFFFFF',
         fontWeight: 'bold',
@@ -109,7 +113,7 @@ const styles = {
         maxWidth: ['500px', null, null, null, null, null, '100%'],
       },
       p: {
-        width: '70%'
+        width: ['100%', '70%']
       }
     },
   },

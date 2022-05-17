@@ -64,8 +64,8 @@ export default function KeyFeature() {
   return (
     <section id="services">
       <Container>
-      <br />
-      <br />
+      <br sx={styles.br} />
+      <br sx={styles.br} />
       <br />
         <Grid sx={styles.bottomGrid}>
           {data.slice(0, 3).map((item) => (
@@ -95,15 +95,19 @@ export default function KeyFeature() {
 }
 
 const styles = {
+  br: {
+   display: ['none', 'block'],
+  },
   bottomGrid: {
     display: 'flex',
     flexDirection: ['column', 'row'],
     justifyContent: 'center',
     alignItems: 'center',
+    alignContent: ['center', null],
     width: '100%',
     gap: '40px',
-    marginTop: '75px',
-    flexWrap: ['wrap', 'wrap', 'wrap', 'wrap', 'nowrap'],
+    marginTop: ['0', null, '75px'],
+    flexWrap: ['wrap', null, 'nowrap'],
   },
   heading: {
     paddingTop: '10rem',

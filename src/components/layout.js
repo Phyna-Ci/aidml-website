@@ -1,17 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui';
+import {jsx, Flex} from 'theme-ui';
 import React from 'react';
-import { keyframes } from '@emotion/react'
-import { useRouter } from 'next/router';
+import {keyframes} from '@emotion/react'
+import {useRouter} from 'next/router';
 import Header from './header/header';
 import Footer from './footer/footer';
+import CustomModal from './modal';
+import useModal from '../hooks/useModal';
 import BackgroundVideo from 'assets/background.svg';
 
-const fadeIn = keyframes({ from: { opacity: 0 }, to: { opacity: 1 } })
+const fadeIn = keyframes({from: {opacity: 0}, to: {opacity: 1}})
 
-export default function Layout({ children }) {
+export default function Layout({children}) {
   const router = useRouter();
+  const modal = useModal();
 
   return (
     <Flex
@@ -30,7 +33,7 @@ export default function Layout({ children }) {
         } : {}),
       }}
     >
-      <Header />
+      <Header/>
       <main
         sx={{
           variant: 'layout.main',
@@ -39,7 +42,15 @@ export default function Layout({ children }) {
       >
         {children}
       </main>
-      <Footer />
+      <Footer/>
+      <CustomModal
+        modalIsOpen={modal.state.isOpen}
+        closeModal={() => modal.dispatch({
+          type: 'TOGGLE',
+        })}
+        afterOpenModal={() => console.log('modal open!')}
+        subtitle={'Get in touch with us'}
+      />
     </Flex>
   );
 }

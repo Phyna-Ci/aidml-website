@@ -63,7 +63,7 @@ const styles = {
       'repeat(2, 1fr)',
     ],
     headingContainer: {
-      padding: ['0 5rem'],
+      padding: ['0, 2rem', null, '0 5rem'],
     }
   },
   heading: {
