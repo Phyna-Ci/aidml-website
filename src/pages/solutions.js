@@ -63,9 +63,8 @@ const Solutions = () => {
         <Container sx={styles.ourProcessInner}>
           <Box sx={styles.headingSection}>
             <Heading as="h3">
-              Industries
+              Our Processes
             </Heading>
-            <Text as="p">Our Processes</Text>
           </Box>
           <Box sx={styles.bottomGrid}>
             {data.map((item) => (
@@ -282,7 +281,7 @@ const styles = {
     }
   },
   featureCardContainerElevated: {
-    marginBottom: [null, null, '-10rem'],
+    marginBottom: [null, null, null, null, '-10rem'],
   },
   featureCard: {
     textAlign: 'center'
