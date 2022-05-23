@@ -1,5 +1,5 @@
 
-import { jsx } from 'theme-ui';
+import {Heading, jsx, Text} from 'theme-ui';
 import { Container, Grid, Box } from 'theme-ui';
 import Lottie from 'lottie-react';
 import FeatureCardColumn from 'components/feature-card-column.js';
@@ -9,6 +9,7 @@ import headphoneAnimation from 'assets/animations/50843-headphone.json';
 import ccTV from 'assets/animations/50721-cctv.json';
 import digitalMarketing from 'assets/animations/50834-dashboard.json';
 import digtalMarketingAnimation from 'assets/animations/50851-printer.json';
+import * as React from 'react';
 
 export default function KeyFeature() {
   const data = [
@@ -67,6 +68,11 @@ export default function KeyFeature() {
       <br sx={styles.br} />
       <br sx={styles.br} />
       <br />
+        <Box sx={styles.headingSection}>
+          <Heading as="h3">
+            Industries
+          </Heading>
+        </Box>
         <Grid sx={styles.bottomGrid}>
           {data.slice(0, 3).map((item) => (
             <FeatureCardColumn
@@ -106,8 +112,8 @@ const styles = {
     alignContent: ['center', null],
     width: '100%',
     gap: '40px',
-    marginTop: ['0', null, '75px'],
     flexWrap: ['wrap', null, 'nowrap'],
+    marginTop: ['0', null, '25px'],
   },
   heading: {
     paddingTop: '10rem',
@@ -115,5 +121,19 @@ const styles = {
       maxWidth: 500,
       margin: '10px auto 0',
     },
+  },
+  headingSection: {
+    marginTop: ['0', null, '105px'],
+    textAlign: 'center',
+    h3: {
+      fontSize: ['25px', '35px', null, '35px', null, '35px', '35px'],
+      fontWeight: 700,
+      padding: '.5rem 0',
+      color: '#7B28FF',
+    },
+    p: {
+      color: '#382933',
+      fontSize: '14px'
+    }
   },
 };

@@ -15,8 +15,9 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {
     initGA();
-    logPageView();
-    Router.events.on('routeChangeComplete', logPageView);
+    Router.events.on('routeChangeComplete', () => {
+      logPageView()
+    });
   }, []);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function CustomApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet" />
         <meta name="facebook-domain-verification" content="6zr6acpantk7qc5yenwwwkrneie3s9" />
+        <meta name="google-site-verification" content="L9JvSA9-8iA5_KzXx3HXvQ1kc6paJ0jCOhQ6HgIg6Vw" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D68E06G801" />
         <noscript>
           <img height="1" width="1" style={{ "display": "none" }}

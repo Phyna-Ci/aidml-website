@@ -205,7 +205,7 @@ const Products = () => {
           padding: '2.95rem',
         }}>
           <Heading sx={styles.inDevelopment} as="h5">
-            Lugah Enterprise
+            Lugah Entertainment
           </Heading>
           <Text sx={{width: ['100%', '70%'], fontSize: '14px', color: '#382933', padding: '1rem 0', lineHeight: 1.75}}
                 as="p">

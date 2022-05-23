@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:buster
 
 # create & set working directory
 RUN mkdir -p /usr/src
@@ -8,7 +8,7 @@ WORKDIR /usr/src
 COPY . /usr/src
 
 # install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # start app
 RUN npm run build
