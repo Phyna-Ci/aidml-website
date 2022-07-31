@@ -64,7 +64,7 @@ const styles = {
     },
   },
   illustration: {
-    height: '300px',
+    height: 'auto',
     display: 'flex',
     position: 'relative',
     img: {
@@ -76,7 +76,7 @@ const styles = {
   buttonWrapper: {
     ':not(:first-of-type)': {
       paddingLeft: '1rem',
-      paddingTop: ['0', '1rem', '0'],
+      paddingBottom: ['0', '1rem', '1rem', '2rem'],
     },
     primary: {
       background: '#7B28FF',
