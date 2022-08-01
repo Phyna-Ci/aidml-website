@@ -7,26 +7,14 @@ import * as yup from 'yup';
 import { toast } from 'react-toastify';
 import {
   Grid, Box, Input, Label,
-  Select, Textarea, jsx, Button,
+  Select, Textarea, jsx,
 } from 'theme-ui';
 import getIndustries from '../utils/getIndustries';
 import countriesData from '../data/countries.json';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '50%'
-  },
-};
-
 Modal.setAppElement('#__next');
 
-const scheduleRequestURL = 'https://lugahfront.herokuapp.com/schedule-demo';
+const scheduleRequestURL = `${process.env.NEXT_PUBLIC_LUGAH_SCHEDULE_BASE_URL}/schedule-demo`;
 
 const schema = yup.object().shape({
   firstname: yup.string().required('First name is required'),

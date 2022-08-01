@@ -5,20 +5,69 @@ import {
   Container, Heading, Input,
   Button,
 } from 'theme-ui';
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Logo from 'components/logo';
 import { Element } from 'react-scroll';
 import Widget from './widget';
 import { menuItems } from './footer.data';
 import { rgba } from 'polished';
+import { toast } from 'react-toastify';
 import FooterStrip from './footer-strip';
 import BackgroundVideo from 'assets/background.svg';
 import useModal from '../../hooks/useModal';
 
+const subscriptionURL = `${process.env.NEXT_PUBLIC_LUGAH_SCHEDULE_BASE_URL}/newsletter/subscribe`;
+
 export default function Footer() {
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
   const router = useRouter();
   const modal = useModal();
+
+  const subscribeToNewsLetter = async () => {
+    setLoading(true);
+    const id = toast.loading('Please wait...')
+    const subscriptionRequest = {
+      email,
+      subscriptionActive: true,
+    };
+    const res = await fetch(subscriptionURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(subscriptionRequest),
+    }).catch((e) => {
+      toast.update(id, {
+        render: e.message,
+        type: 'error',
+        isLoading: false,
+        autoClose: 8000
+      });
+      setLoading(false);
+    });
+    if (res) {
+      const data = await res.json();
+      if (data.success) {
+        toast.update(id, {
+          render: `Success - ${data.message}`,
+          type: 'success',
+          isLoading: false,
+          autoClose: 8000
+        })
+        setLoading(false);
+      } else {
+        toast.update(id, {
+          render: `Error - ${data.message}`,
+          type: 'error',
+          isLoading: false,
+          autoClose: 8000
+        })
+        setLoading(false);
+      }
+    }
+  }
   return (
     <Box as="footer" sx={{
       ...styles.footer,
@@ -56,11 +105,11 @@ export default function Footer() {
                 Subscribe to get more updates on AIDML and It products
               </Text>
               <Box sx={styles.inputBox}>
-                <Input />
-                <Button onClick={() => {
-                  modal.dispatch({
-                    type: 'TOGGLE',
-                  })
+                <Input onChange={(event) => {
+                  setEmail(event.target.value);
+                }} style={{ color: '#FFF' }} />
+                <Button disabled={loading} onClick={() => {
+                 subscribeToNewsLetter()
                 }}>
                  send
                 </Button>
