@@ -11,10 +11,55 @@ import chatBotAnimation from 'assets/animations/chatbot-animation.json';
 import comingSoonAnimation from 'assets/animations/coming-soon.json';
 
 const Products = () => {
+  const productVideos = {
+    legacy: 'https://www.youtube.com/embed/U63MHTHDpsA',
+    enterprise: 'https://www.youtube.com/embed/ip73ujwxhN8',
+    entertainment: 'https://www.youtube.com/embed/Z9uMtiE2VW8'
+  }
+  
+  const [activeVideo, setActiveVideo] = React.useState(null);
+  const [isPlaying, setIsPlaying] = React.useState(false);
+
+  const onClickPlay = (video) => {
+    console.log(productVideos[video]);
+    setActiveVideo(video);
+    setIsPlaying(true);
+  }
+
   const modal = useModal();
   const handleClick = () => modal.dispatch({
     type: 'TOGGLE',
-  })
+  });
+
+  const renderVideo = (video) => activeVideo === video && isPlaying ? (
+    <iframe
+      width="100%"
+      height="100%"
+      src={productVideos[activeVideo]}
+      title={`Lugah ${video.charAt(0).toUpperCase()}${video.slice(1)}`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  ) : (
+    <>
+      <div
+        onClick={() => onClickPlay(video)}
+        className="cursor-pointer absolute inset-0 flex items-center justify-center z-10"
+      >
+        <svg width="49" height="60" viewBox="0 0 49 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M46.1902 25.1554L8.61862 0.76965C5.56593 -1.21074 0.890839 0.711059 0.890839 5.6093V54.369C0.890839 58.7634 5.23505 61.4117 8.61862 59.2087L46.1902 34.8347C49.5417 32.6668 49.5524 27.3233 46.1902 25.1554V25.1554Z" fill="white"/>
+        </svg>
+      </div>
+      <Lottie
+        sx={styles.animation}
+        loop={true}
+        autoPlay={true}
+        animationData={comingSoonAnimation}
+      />
+    </>
+  );
+  
   return (
     <React.Fragment>
       <SEO
@@ -126,8 +171,9 @@ const Products = () => {
           background: '#CD71F62F',
           width: '50%',
           display: ['none', 'flex'],
+          position: 'relative',
         }}>
-          <Lottie sx={styles.animation} loop={true} autoPlay={true} animationData={comingSoonAnimation}/>
+          {renderVideo('legacy')}
         </Box>
         <Box sx={{
           height: ['auto', '450px'],
@@ -194,9 +240,9 @@ const Products = () => {
           width: '50%',
           marginTop: '-50px',
           display: ['none', 'flex'],
+          position: 'relative',
         }}>
-          <Lottie sx={styles.animation} loop={true} autoPlay={true} animationData={comingSoonAnimation}/>
-
+          {renderVideo('entertainment')}
         </Box>
         <Box sx={{
           height: ['auto', '450px'],
@@ -270,13 +316,13 @@ const styles = {
     width: '100%',
     display: 'flex',
     button: {
-      minHeight: '45px',
+      minHeight: '40px',
     },
     primary: {
       background: '#FF28FF',
-      height: '45px !important',
+      height: '40px !important',
       borderRadius: 0,
-      fontSize: '12px',
+      fontSize: '14px',
       fontWeight: 500,
       ':hover': {
         background: 'white',

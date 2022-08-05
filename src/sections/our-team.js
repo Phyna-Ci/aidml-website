@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { useRef, useState, useEffect } from 'react';
-import { jsx, Box, Container, Image } from 'theme-ui';
+import { jsx, Box, Container, Image, Heading, Text } from 'theme-ui';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SectionHeading from 'components/section-heading';
@@ -19,9 +19,13 @@ const data = [
   {
     id: 1,
     avatar: avatar1,
-    name: 'Emmalee Mclain',
-    designation: 'Product Designer',
+    name: 'Lawrence Esin',
+    designation: 'Founder/CEO',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
@@ -30,33 +34,29 @@ const data = [
         name: 'github',
         link: 'http://github.com',
       },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
-      },
     ],
   },
   {
     id: 2,
     avatar: avatar2,
-    name: 'Daisy Morgan',
-    designation: 'Lead developer',
+    name: 'Dr. (Mrs.) Seinye O.B. Lulu-Briggs',
+    designation: 'Member Advisory Team',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
-      },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
       },
     ],
   },
   {
     id: 3,
     avatar: avatar3,
-    name: 'Ariyanna Hicks',
-    designation: 'Experience Designer',
+    name: 'Rahman Oloritun',
+    designation: 'Project Manager',
     socialLinks: [
       {
         name: 'twitter',
@@ -71,9 +71,13 @@ const data = [
   {
     id: 4,
     avatar: avatar4,
-    name: 'Yamilet Hooker',
-    designation: 'User interface designer',
+    name: 'Ayomide Akindipo',
+    designation: 'Legal',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
@@ -81,19 +85,19 @@ const data = [
       {
         name: 'github',
         link: 'http://github.com',
-      },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
       },
     ],
   },
   {
     id: 5,
     avatar: avatar1,
-    name: 'Emmalee Mclain',
-    designation: 'Product Designer',
+    name: 'Olasimbo Arigbabu (PhD)',
+    designation: 'Data Scientist/APM',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
@@ -102,33 +106,29 @@ const data = [
         name: 'github',
         link: 'http://github.com',
       },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
-      },
     ],
   },
   {
     id: 6,
     avatar: avatar2,
-    name: 'Daisy Morgan',
-    designation: 'Lead developer',
+    name: 'Olusola Odunlami',
+    designation: 'Finance',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
-      },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
       },
     ],
   },
   {
     id: 7,
     avatar: avatar3,
-    name: 'Ariyanna Hicks',
-    designation: 'Experience Designer',
+    name: 'Tolulope Odueke',
+    designation: 'APM Software Engineering',
     socialLinks: [
       {
         name: 'twitter',
@@ -143,9 +143,13 @@ const data = [
   {
     id: 8,
     avatar: avatar4,
-    name: 'Yamilet Hooker',
-    designation: 'User interface designer',
+    name: 'Funto Onifade',
+    designation: 'Business Development/Corporate Comms',
     socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
       {
         name: 'twitter',
         link: 'http://twitter.com',
@@ -153,10 +157,6 @@ const data = [
       {
         name: 'github',
         link: 'http://github.com',
-      },
-      {
-        name: 'dribbble',
-        link: 'http://dribbble.com',
       },
     ],
   },
@@ -219,11 +219,12 @@ const OurTeam = () => {
   return (
     <Box as="section" id="team" sx={styles.section}>
       <Container ref={containerRef}>
-        <SectionHeading
-          sx={styles.heading}
-          title="Meet our superheros"
-          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing contents."
-        />
+      <Box sx={styles.headingSection}>
+          <Heading as="h3">
+            Our Team
+          </Heading>
+          <Text as="p">Meet our amazing team</Text>
+        </Box>
       </Container>
       <Box
         sx={{
@@ -270,7 +271,6 @@ export default OurTeam;
 
 const styles = {
   section: {
-    pt: [11],
     pb: [11, null, null, 12, null, 14],
   },
   heading: {
@@ -278,6 +278,20 @@ const styles = {
       maxWidth: 500,
       m: '10px auto 0',
     },
+  },
+  headingSection: {
+    textAlign: 'center',
+    h3: {
+      fontSize: ['25px', '35px', null, '35px', null, '35px', '35px'],
+      fontWeight: 700,
+      padding: '3.5rem 0 0 0',
+      color: '#7B28FF',
+    },
+    p: {
+      color: '#382933',
+      fontSize: '14px',
+      padding: '2.5rem 0 3.5rem 0',
+    }
   },
   teamWrapper: {
     position: 'relative',
