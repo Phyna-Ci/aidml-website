@@ -8,8 +8,13 @@ import { useRouter } from 'next/router';
 import SEO from 'components/seo';
 import Banner from 'sections/banner';
 import piggyBankAnimationData from 'assets/animations/piggy-bank.json';
+import OurTeam from 'sections/our-team';
 
 const About = () => {
+  const m = {name: 'Lawrence Esin', avatar: 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png', about: 'He is the ceo of this company and you can read his bio', designation: 'ceo', socialLinks: [{
+    link: 'https://google.com',
+    name: 'twitter',
+  }]}
   const router = useRouter()
   return (
     <React.Fragment>
@@ -50,6 +55,7 @@ const About = () => {
             </Box>
           </Box>
         </Grid>
+        <OurTeam />
       </Container>
       <br />
       <br />
