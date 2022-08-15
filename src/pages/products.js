@@ -87,7 +87,7 @@ const Products = () => {
                 optimize revenue and reduce their overhead cost.
               </Text>
               <Box sx={styles.buttonWrapper}>
-                <Button as="a" href="https://lugahfront.aidml.com" target="_blank" sx={styles.buttonWrapper.primary}>Consultation</Button>
+                <Button as="a" href="https://front.aidml.com" target="_blank" sx={styles.buttonWrapper.primary}>Consultation</Button>
               </Box>
             </Box>
             <Box sx={styles.illustrationSection}>
