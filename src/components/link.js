@@ -5,8 +5,8 @@ import { jsx, Link as A } from 'theme-ui';
 import { Link as MenuLink } from 'react-scroll';
 import { HiOutlineChevronRight } from 'react-icons/hi';
 
-export function NavLink({ path, label, children, ...rest }) {
-  return (
+export function NavLink({ path, label, children, external, ...rest }) {
+  return !external ? (
     <MenuLink
       to={path}
       spy={true}
@@ -19,14 +19,18 @@ export function NavLink({ path, label, children, ...rest }) {
     >
       {label}
     </MenuLink>
-  );
+  ) : (
+    <A href={path} target="_blank" {...rest}>{children ? children : label}</A>
+  );;
 }
 
-export function Link({ path, label, children, ...rest }) {
-  return (
+export function Link({ path, label, children, external, ...rest }) {
+  return !external ? (
     <NextLink href={path}>
       <A {...rest}>{children ? children : label}</A>
     </NextLink>
+  ) : (
+    <A href={path} target="_blank" style={{ decoration: 'none' }} {...rest}>{children ? children : label}</A>
   );
 }
 

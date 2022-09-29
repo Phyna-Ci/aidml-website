@@ -39,13 +39,14 @@ export default function Header() {
                 <Box as="nav" sx={styles.navbar} className="navbar">
                   <Tab.Group>
                     <Tab.List as="ul" sx={styles.navList}>
-                      {menuItems.map(({ path, label }, i) => (
+                      {menuItems.map(({ path, label, external }, i) => (
                         <Tab as={React.Fragment} key={`${path}${i}`}>
                           <li>
                             <Link
                               className={`nav-item ${router.pathname === path ? 'active': ''}`}
                               path={path}
                               label={label}
+                              external={external}
                             />
                           </li>
                         </Tab>

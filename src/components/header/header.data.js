@@ -16,7 +16,8 @@ export default [
     label: 'Products',
   },
   {
-    path: '/blog',
+    path: 'https://aidml.medium.com/',
     label: 'Blog',
+    external: true,
   },
 ];
