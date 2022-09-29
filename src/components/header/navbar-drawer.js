@@ -46,7 +46,7 @@ const DrawerNav = ({ isSticky }) => {
       <Box sx={styles.wrapper}>
         <Logo sx={styles.logo} />
         <Box as="ul" sx={styles.navbar}>
-          {menuItems.map(({ path, label }, i) => (
+          {menuItems.map(({ path, label, external }, i) => (
             <Box as="li" key={i}>
               <Link
                 activeClass="active"
@@ -55,6 +55,7 @@ const DrawerNav = ({ isSticky }) => {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                external={external}
               >
                 {label}
               </Link>
