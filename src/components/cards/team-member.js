@@ -7,14 +7,15 @@ const TeamMember = ({ member }) => {
   return (
     <Box sx={styles.section}>
       <Flex as="figure" sx={styles.avatar}>
-        <Image src={member?.avatar} alt={member?.name} />
+        <Image
+          sx={styles.images}
+          src={member?.avatar}
+          alt={member?.name}
+        />
       </Flex>
       <Box sx={styles.about}>
         <Heading as="h3">{member?.name}</Heading>
         <Text as="p">{member?.designation}</Text>
-        <span sx={styles.readMore}>
-          READ MORE →
-        </span>
         <Box sx={styles.socialLinks}>
           {member?.socialLinks?.map((social, index) => (
             <Link href={social?.link} key={index}>
@@ -87,5 +88,10 @@ const styles = {
       display: 'inline-flex',
       mr: [2],
     },
+  },
+  images: {
+    width: '160px',
+    height: '172px',
+    objectFit: 'cover',
   },
 };
