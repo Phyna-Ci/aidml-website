@@ -7,10 +7,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SectionHeading from 'components/section-heading';
 import TeamMember from 'components/cards/team-member';
 
-import avatar1 from 'assets/images/team/member1.png';
-import avatar2 from 'assets/images/team/member2.png';
-import avatar3 from 'assets/images/team/member3.png';
-import avatar4 from 'assets/images/team/member4.png';
+import avatar1 from 'assets/images/lawrence.png';
+import avatar2 from 'assets/images/lulu-briggs.png';
+import avatar3 from 'assets/images/oloritun.jpg';
+import avatar4 from 'assets/images/akindipo.jpg';
+import avatar5 from 'assets/images/arigbabu.jpg';
+import avatar6 from 'assets/images/odunlami.jpg';
+import avatar7 from 'assets/images/odueke.jpg';
+import avatar8 from 'assets/images/onifade.jpg';
+import avatar9 from 'assets/images/jui.png';
+import avatar10 from 'assets/images/tom.png';
 import arrowRight from 'assets/images/icons/arrow-right.png';
 
 SwiperCore.use([Navigation, Pagination]);
@@ -90,7 +96,7 @@ const data = [
   },
   {
     id: 5,
-    avatar: avatar1,
+    avatar: avatar5,
     name: 'Olasimbo Arigbabu (PhD)',
     designation: 'Data Scientist/APM',
     socialLinks: [
@@ -110,7 +116,7 @@ const data = [
   },
   {
     id: 6,
-    avatar: avatar2,
+    avatar: avatar6,
     name: 'Olusola Odunlami',
     designation: 'Finance',
     socialLinks: [
@@ -126,7 +132,7 @@ const data = [
   },
   {
     id: 7,
-    avatar: avatar3,
+    avatar: avatar7,
     name: 'Tolulope Odueke',
     designation: 'APM Software Engineering',
     socialLinks: [
@@ -142,9 +148,49 @@ const data = [
   },
   {
     id: 8,
-    avatar: avatar4,
+    avatar: avatar8,
     name: 'Funto Onifade',
     designation: 'Business Development/Corporate Comms',
+    socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
+      {
+        name: 'twitter',
+        link: 'http://twitter.com',
+      },
+      {
+        name: 'github',
+        link: 'http://github.com',
+      },
+    ],
+  },
+  {
+    id: 9,
+    avatar: avatar9,
+    name: 'Jui Hsiang Chung',
+    designation: 'Business Development - Asia',
+    socialLinks: [
+      {
+        name: 'linkedin',
+        link: 'http://linkedin.com',
+      },
+      {
+        name: 'twitter',
+        link: 'http://twitter.com',
+      },
+      {
+        name: 'github',
+        link: 'http://github.com',
+      },
+    ],
+  },
+  {
+    id: 10,
+    avatar: avatar10,
+    name: 'Thomas Chen Yun Hua',
+    designation: 'Senior Technology Consultant',
     socialLinks: [
       {
         name: 'linkedin',
