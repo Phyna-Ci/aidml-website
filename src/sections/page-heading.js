@@ -30,7 +30,7 @@ const styles = {
     alignItems: 'center',
     padding: '3rem 0',
     h3: {
-      fontSize: ['28px', '35px', null, '50px', null, '50px', '50px'],
+      fontSize: ['28px', '35px', null, '40px', null, '50px', '50px'],
       fontWeight: 700,
       padding: '.5rem 0',
       color: '#7B28FF',
