@@ -11,8 +11,8 @@ const data = [
     title: 'Phone',
     moreLink: '#',
     hasBg: true,
-    items: ['Dubai: +971 56 587 4697', 'Nigeria: +234 817 578 8888, +234 705 974 8355', 'US: +1 240 608 9766'],
-    description: 'Dubai: +971 56 587 4697',
+    items: ['Dubai: +971 52 153 8975 - Phyna IT (AiDML Parent Company)', 'Nigeria: +234 705 974 8355'],
+    description: 'Dubai: +971 52 153 8975',
    
   },
   {
